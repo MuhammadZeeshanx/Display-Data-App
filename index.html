@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        html{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+form{
+    padding: 6px;
+    width: 400px;
+    display: grid;
+    margin-left: 400px;
+    box-shadow: 0px 0px  2px 4px ;
+}
+
+input{
+    margin: 6px;
+    padding: 5px;
+}
+button{
+    width: 150px;
+    text-align: center;
+    border: none;
+    background: black;
+    color: white;
+    padding: 6px;
+}
+    </style>
+</head>
+<body>
+<form>
+    <h2 style="text-align: center;">Data Store and Display Web App</h2>
+<input type="text" placeholder="Enter Your Name" id="name">
+<input type="text" placeholder="Enter Your Father Name" id="father">
+<input type="number" placeholder="Enter your Age" id="age">
+<input type="date" placeholder="Enter You Date of Birth" id="date">
+<button type="button" onclick="Display()">Display</button>
+
+<p id="Result"></p>
+</form>
+
+    
+    <script>
+function StoreData() {
+    var name = document.getElementById("name").value;
+    var father = document.getElementById("father").value;
+    var age = document.getElementById("age").value;
+    var date = document.getElementById("date").value;
+
+    var userdata = "<b>Name :" + name + "<br>Father Name :" + father + "<br>Age :" + age +"<br>Date of Birth :" +date;
+
+    return userdata;
+}
+function Display() {
+    userdata = StoreData();
+    document.getElementById("Result").innerHTML = userdata;
+    document.getElementById("Result").style.color = "cadetblue"
+    return false;
+}
+
+    </script>
+</body>
+</html>
